@@ -141,38 +141,42 @@
             // 
             // SaveButton
             // 
+            this.SaveButton.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.SaveButton.Location = new System.Drawing.Point(319, 365);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(145, 40);
             this.SaveButton.TabIndex = 11;
             this.SaveButton.Text = "Сохранить";
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.UseVisualStyleBackColor = false;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // MenuButton
             // 
+            this.MenuButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.MenuButton.Location = new System.Drawing.Point(640, 365);
             this.MenuButton.Name = "MenuButton";
             this.MenuButton.Size = new System.Drawing.Size(106, 40);
             this.MenuButton.TabIndex = 14;
             this.MenuButton.Text = "Меню";
-            this.MenuButton.UseVisualStyleBackColor = true;
+            this.MenuButton.UseVisualStyleBackColor = false;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // infoButton
             // 
+            this.infoButton.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.infoButton.Location = new System.Drawing.Point(12, 12);
             this.infoButton.Name = "infoButton";
             this.infoButton.Size = new System.Drawing.Size(114, 37);
             this.infoButton.TabIndex = 15;
             this.infoButton.Text = "О программе";
-            this.infoButton.UseVisualStyleBackColor = true;
+            this.infoButton.UseVisualStyleBackColor = false;
             this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
             // 
             // CreateDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.infoButton);
             this.Controls.Add(this.MenuButton);
@@ -191,6 +195,7 @@
             this.Name = "CreateDatabase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateDatabase";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.CreateDatabase_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

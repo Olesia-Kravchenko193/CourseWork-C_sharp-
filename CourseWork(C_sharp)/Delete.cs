@@ -16,12 +16,8 @@ namespace CourseWork_C_sharp_
         {
             InitializeComponent();
         }
-
         Information information = new Information();
-        OpenFileDialog open = new OpenFileDialog();
-        //open.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
-        
-
+    
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Вы точно хотите удалить эти страны?", "", MessageBoxButtons.YesNo);
@@ -32,25 +28,34 @@ namespace CourseWork_C_sharp_
                     int count = 0;
                     int populatoin = Int32.Parse(textBox1.Text);
 
-                    if (richTextBox1.Text != String.Empty)
-                    {
-                        richTextBox1.Clear();
-                    }
                     for (int i = 0; i < Information.size; i++)
                     {
-                        if (populatoin >= Information.Population[i])
+                        if (populatoin > Information.state[i].Population)
                         {
-                            richTextBox1.Text += ($"Государство: {Information.StateName[i]},\n Столица: {Information.Capital[i]},\n Континент: {Information.Сontinent[i]},\n Численность населения: {Information.Population[i]},\n Площадь: {Information.Area[i]}\n");
+                            richTextBox1.Text += ($"Государство: {Information.state[i].StateName}\n");
+                            richTextBox1.Text += ($"Столица: {Information.state[i].Capital}\n");
+                            richTextBox1.Text += ($"Континент: {Information.state[i].Continent}\n");
+                            richTextBox1.Text += ($"Численность населения: {Information.state[i].Population}\n");
+                            richTextBox1.Text += ($"Площадь: {Information.state[i].Area} км^2\n\n");
+                            information.StateDelete(i);
                             count++;
                         }
+
                     }
+                    if(count == 0)
+                    {                  
+                            MessageBox.Show("Стран, у которых численность меньше заданной, не найдено!");
+                    }
+                    else
+                    {
+                            MessageBox.Show("Удалено!");
+                    }
+                   
                 }
                 catch
                 {
                     MessageBox.Show("Неверно введено численность");
                 }
-                information.ClearAll();
-                MessageBox.Show("Удалено!");
             }
         }
 
@@ -64,6 +69,12 @@ namespace CourseWork_C_sharp_
         private void infoButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            About_the_program AboutTheProgram = new About_the_program();
+            AboutTheProgram.Show();
+        }
+
+        private void Delete_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
             About_the_program AboutTheProgram = new About_the_program();
             AboutTheProgram.Show();
         }

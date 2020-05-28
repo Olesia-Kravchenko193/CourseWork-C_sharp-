@@ -35,11 +35,14 @@ namespace CourseWork_C_sharp_
                 edit.Show();
                 Information.count_2 = 0;
             }
-        
-            if(textBox1.Text != String.Empty)
-            {
-                textBox1.Clear();
-            }
+            textBox1.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu menu = new Menu();
+            menu.Show();
         }
     }
 }

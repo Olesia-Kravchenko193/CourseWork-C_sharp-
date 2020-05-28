@@ -12,10 +12,10 @@ namespace CourseWork_C_sharp_
 {
     public partial class Menu : Form
     {
+        Information information = new Information();
         public Menu()
         {
             InitializeComponent();
-            
         }
 
         private void CreateDatabaseButton_Click(object sender, EventArgs e)
@@ -62,6 +62,12 @@ namespace CourseWork_C_sharp_
         private void infoButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            About_the_program AboutTheProgram = new About_the_program();
+            AboutTheProgram.Show();
+        }
+
+        private void Menu_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
             About_the_program AboutTheProgram = new About_the_program();
             AboutTheProgram.Show();
         }

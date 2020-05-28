@@ -50,6 +50,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBox1.Location = new System.Drawing.Point(323, 103);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(302, 335);
@@ -65,49 +66,54 @@
             // 
             // DeleteButton
             // 
+            this.DeleteButton.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.DeleteButton.Location = new System.Drawing.Point(65, 161);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(112, 38);
             this.DeleteButton.TabIndex = 3;
             this.DeleteButton.Text = "Удалить";
-            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(12, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 17);
+            this.label2.Size = new System.Drawing.Size(257, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Введите численность населения:";
             // 
             // MenuButton
             // 
+            this.MenuButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.MenuButton.Location = new System.Drawing.Point(659, 373);
             this.MenuButton.Name = "MenuButton";
             this.MenuButton.Size = new System.Drawing.Size(106, 40);
             this.MenuButton.TabIndex = 15;
             this.MenuButton.Text = "Меню";
-            this.MenuButton.UseVisualStyleBackColor = true;
+            this.MenuButton.UseVisualStyleBackColor = false;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // infoButton
             // 
+            this.infoButton.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.infoButton.Location = new System.Drawing.Point(33, 375);
             this.infoButton.Name = "infoButton";
             this.infoButton.Size = new System.Drawing.Size(114, 37);
             this.infoButton.TabIndex = 16;
             this.infoButton.Text = "О программе";
-            this.infoButton.UseVisualStyleBackColor = true;
+            this.infoButton.UseVisualStyleBackColor = false;
             this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(320, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 17);
+            this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 17;
             this.label3.Text = "Удалено:";
             // 
@@ -115,6 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.infoButton);
@@ -127,6 +134,7 @@
             this.Name = "Delete";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Delete_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

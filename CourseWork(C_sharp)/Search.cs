@@ -24,15 +24,16 @@ namespace CourseWork_C_sharp_
                 int count = 0;
                 string capital = textBox1.Text;
                 
-                if(richTextBox1.Text != String.Empty)
-                {
-                    richTextBox1.Clear();
-                }
+                richTextBox1.Clear();
                 for (int i = 0; i < Information.size; i++)
                 {
-                    if (capital == Information.Capital[i])
+                    if (capital == Information.state[i].Capital)
                     {
-                        richTextBox1.Text += ($"Государство: {Information.StateName[i]},\n Столица: {Information.Capital[i]},\n Континент: {Information.Сontinent[i]},\n Численность населения: {Information.Population[i]},\n Площадь: {Information.Area[i]} km^2\n");
+                        richTextBox1.Text += ($"Государство: {Information.state[i].StateName},\n");
+                        richTextBox1.Text += ($"Столица: {Information.state[i].Capital}\n");
+                        richTextBox1.Text += ($"Континент: {Information.state[i].Continent}\n");
+                        richTextBox1.Text += ($"Численность населения: {Information.state[i].Population}\n");
+                        richTextBox1.Text += ($"Площадь: {Information.state[i].Area} км^2\n\n");
                         count++;
                     }
                 }
@@ -52,15 +53,16 @@ namespace CourseWork_C_sharp_
                 int count = 0;
                 int area = Int32.Parse(textBox1.Text);
 
-                if (richTextBox1.Text != String.Empty)
-                {
-                    richTextBox1.Clear();
-                }
+                richTextBox1.Clear();
                 for (int i = 0; i < Information.size; i++)
                 {
-                    if (area <= Information.Area[i])
+                    if (area <= Information.state[i].Area)
                     {
-                        richTextBox1.Text += ($"Государство: {Information.StateName[i]},\n Столица: {Information.Capital[i]},\n Континент: {Information.Сontinent[i]},\n Численность населения: {Information.Population[i]},\n Площадь: {Information.Area[i]}\n");
+                        richTextBox1.Text += ($"Государство: {Information.state[i].StateName},\n");
+                        richTextBox1.Text += ($"Столица: {Information.state[i].Capital}\n");
+                        richTextBox1.Text += ($"Континент: {Information.state[i].Continent}\n");
+                        richTextBox1.Text += ($"Численность населения: {Information.state[i].Population}\n");
+                        richTextBox1.Text += ($"Площадь: {Information.state[i].Area} км^2\n\n");
                         count++;
                     }
                 }
@@ -83,6 +85,12 @@ namespace CourseWork_C_sharp_
         private void infoButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            About_the_program AboutTheProgram = new About_the_program();
+            AboutTheProgram.Show();
+        }
+
+        private void Search_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
             About_the_program AboutTheProgram = new About_the_program();
             AboutTheProgram.Show();
         }
